@@ -11,7 +11,7 @@ import threading,time
 import os
 import gc
 
-
+def get_measurement():
     
             thread=myThread2(31,176, "test/frontF.jpg", "test/sideF.jpg","test/backF.jpg")
             thread.start()
