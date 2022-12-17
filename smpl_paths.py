@@ -18,7 +18,7 @@ def get_hres(v, f):
     return (nv, nf, mapping)
 
 
-# smpl_vt_ft_path = '/BS/bharat/work/MGN_final_release/assets/smpl_vt_ft.pkl'
+
 class SmplPaths:
     def __init__(self, project_dir='', exp_name='', gender='neutral', garment=''):
         self.project_dir = project_dir
