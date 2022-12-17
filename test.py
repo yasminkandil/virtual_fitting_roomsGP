@@ -189,37 +189,39 @@ def get_hip_width_side(predictions,human_img):
 def calculate(a,b):
     return (22/7) * (a + b) * (1 +( (3 * ((a - b) ** 2)) / ((10 + ((4 - ((3 * ((a - b) ** 2)) / ((a + b) ** 2)) ) ** 0.5)) * ((a + b) ** 2))))
 def getMeasurements(id,real_height,frontImagePath,sideImagePath,backImagePath):
-    ################################################################################chest
+    #chest
     front_human_img, height = detect_human(frontImagePath)
     pixels_per_metric = float(height) / float(real_height)
     predictions = detect_joints(frontImagePath)
 
     count_chest_pixels = get_chest_width(predictions,front_human_img)
     real_chest_width = float(count_chest_pixels) / float(pixels_per_metric)\
-    #################################################################################Back
+    #Back
     pixels_per_metric = float(height) / float(real_height)
     predictions = detect_joints(backImagePath)
 
     count_back_pixels = get_back_width(predictions,front_human_img)
     real_back_width = float(count_back_pixels) / float(pixels_per_metric)
-###########################################################################################Hip
+#Hip
     count_hip_pixels = get_hip_width_front(predictions,front_human_img)
     real_hip_width = (float(count_hip_pixels) / float(pixels_per_metric))
 
     side_human_img, height = detect_human(sideImagePath)
     pixels_per_metric = float(height) / float(real_height)
     predictions = detect_joints(sideImagePath)
-#####################################################################################Hip Side Depth
+    
+#Hip Side Depth
     count_hip_side_pixels = get_hip_width_side(predictions,side_human_img)
     real_hip_width_side = (float(count_hip_side_pixels) / float(pixels_per_metric))
     
- #################################################################################Chest Side Depth   
+ #Chest Side Depth   
     count_chest_side_pixels = get_chest_depth(predictions,side_human_img)
     real_chest_depth_side = (float(count_chest_side_pixels) / float(pixels_per_metric))
- ###################################################################################Back Side Depth   
+ #Back Side Depth   
     count_back_side_pixels = get_back_depth(predictions,side_human_img)
     real_back_depth_side = (float(count_back_side_pixels) / float(pixels_per_metric))
-#######################################################################################
+
+    
     hip=calculate(float(real_hip_width) / 2, float(real_hip_width_side) / 2)
     chest=calculate(float(real_chest_width) / 2, float(real_chest_depth_side) / 2)
     back=calculate(float(real_back_width) / 2, float(real_back_depth_side) / 2)
