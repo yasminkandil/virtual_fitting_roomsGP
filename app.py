@@ -19,7 +19,7 @@ def get_measurement():
 def create_model():
     
         thread = myThread({"height":174,"weight":65,"hip": 73.30642014758956, "chest":  94.64917840576544},"31")
-        #thread.start()
+        thread.start()
        
 
 def fit_model():
