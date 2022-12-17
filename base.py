@@ -22,12 +22,14 @@ class MatrixVisualizer(object):
         interp_method_matrix=cv2.INTER_LINEAR,
         interp_method_mask=cv2.INTER_NEAREST,
     ):
+        #self.inplace = inplace
         self.inplace = inplace
         self.cmap = cmap
         self.val_scale = val_scale
         self.alpha = alpha
         self.interp_method_matrix = interp_method_matrix
         self.interp_method_mask = interp_method_mask
+         #self.interp_method_mask = interp_method_mask
 
     def visualize(self, image_bgr, mask, matrix, bbox_xywh):
         self._check_image(image_bgr)
