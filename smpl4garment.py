@@ -19,11 +19,7 @@ class SMPL4Garment(object):
         with open(os.path.join(TailorNet_master.global_var.DATA_DIR, TailorNet_master.global_var.GAR_INFO_FILE), 'rb') as f:
             self.class_info = pickle.load(f)
 
-        # skirt_weight: n_skirt x n_body
-        # skirt_skinning: n_skirt x 24
-        # self.skirt_weight = ch.array(np.load(os.path.join(
-        #     TailorNet_master.global_var.DATA_DIR, 'skirt_weight.npz'))['w'])
-        # self.skirt_skinning = self.skirt_weight.dot(self.smpl_base.weights)
+        
 
     def run(self, beta=None, theta=None, garment_d=None, garment_class=None):
         """Outputs body and garment of specified garment class given theta, beta and displacements."""
@@ -43,7 +39,6 @@ class SMPL4Garment(object):
                 self.smpl_base.v_personal[vert_indices] = garment_d
                 garment_m = Mesh(v=self.smpl_base.r[vert_indices], f=f)
             else:
-                # vert_indices = self.class_info[garment_class]['vert_indices']
                 f = self.class_info[garment_class]['f']
 
                 A = self.smpl_base.A.reshape((16, 24)).T
