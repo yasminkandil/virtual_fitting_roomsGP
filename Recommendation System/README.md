@@ -1,23 +1,5 @@
-# Outfit Compatibility Prediction and Diagnosis with Multi-Layered Comparison Network
 
 
-<div align=center>
-<img src="./exp/diagnosis.png" width="80%" height="80%" />
-</div>
-
-<div align=center>
-<img src="./exp/demo1.gif" width="80%" height="80%" />
-</div>
-
-Paper: 
-**Outfit Compatibility Prediction and Diagnosis with Multi-Layered Comparison Network**
-
-by Xin Wang, Bo Wu, Yueqi Zhong. 
-Published at ACM MM 2019 in Nice, France.
-
-[[Paper](https://dl.acm.org/doi/10.1145/3343031.3350909)] [[Arxiv](https://arxiv.org/abs/1907.11496)] [[Demo](https://outfit-diagnosis.herokuapp.com)]
-
-## Contents of this repository
 
 * [mcn](./mcn): Main program source code
 * [data](./data): **Polyvore-T** datasets based on [Polyvore](https://github.com/xthan/polyvore-dataset).
@@ -26,16 +8,6 @@ Published at ACM MM 2019 in Nice, France.
 
 ## Requirements
 
-Ubuntu 16.04, NVIDIA GTX 1080Ti (for batch size 16), python >= 3.5.2
-
-```
-torch==1.0.1
-torchvision==0.2.1
-networkx==2.4
-opencv-python==4.2.0.32
-matplotlib==2.2.2
-scikit-learn==0.21.2
-```
 
 ## Usage
 
@@ -92,10 +64,4 @@ More guide can be found in [here](./app/README.md).
 Please cite our paper if you use or refer this code:
 
 ```
-@inproceedings{wang2019diagnosis,
-  title={Outfit Compatibility Prediction and Diagnosis with Multi-Layered Comparison Network},
-  author={Xin Wang, Bo Wu and Yueqi Zhong},
-  booktitle={ACM International Conference on Multimedia},
-  year={2019}
-}
-```
+
