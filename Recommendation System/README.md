@@ -53,15 +53,4 @@ Pretrained model weights can be found in the links. The train, validation and te
 | [CSN](https://drive.google.com/open?id=1EYwtJBRMFxRDzQs7JNYQhp2TpRF2fw9r) |   84.90   |   57.06   |
 | [Ours](https://drive.google.com/open?id=1WAErKHDmDfamZQt90wAOC5Db04euIeIP) | **91.90** | **64.35** |
 
-## Demo
-
-A demo application is in the [app](./app) directioy. You can run it locally by go to [app](./app) directory then use command ``python main.py``.
-
-More guide can be found in [here](./app/README.md).
-
-## Cite
-
-Please cite our paper if you use or refer this code:
-
-```
 
